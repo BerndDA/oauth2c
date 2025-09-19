@@ -130,7 +130,7 @@ func ClientAssertionClaims(serverConfig ServerConfig, clientConfig ClientConfig)
 		return map[string]interface{}{
 			"iss": clientConfig.ClientID,
 			"sub": clientConfig.ClientID,
-			"aud": serverConfig.TokenEndpoint,
+			"aud": clientConfig.IssuerURL,
 			"iat": time.Now().Unix(),
 			"exp": time.Now().Add(time.Minute * 10).Unix(),
 			"jti": RandomString(20),
