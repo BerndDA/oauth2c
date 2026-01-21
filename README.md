@@ -1,5 +1,10 @@
 # OAuth2c: user-friendly OAuth CLI
 
+> **Note:** This is a fork of [cloudentity/oauth2c](https://github.com/cloudentity/oauth2c).
+> 
+> **Changes from upstream:**
+> - Added `--extra-param` flag to support custom authorization parameters (e.g., `--extra-param key=value`)
+
 [![status](https://github.com/cloudentity/oauth2c/workflows/build/badge.svg)](https://github.com/cloudentity/oauthc/actions)
 [![license](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![release](https://img.shields.io/github/release-pre/cloudentity/oauth2c.svg)](https://github.com/cloudentity/oauth2c/releases)
