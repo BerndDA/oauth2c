@@ -85,6 +85,13 @@ func (r *Request) AuthorizeRequest(
 		r.Form.Set("idp_hint", cconfig.IDPHint)
 	}
 
+	for _, param := range cconfig.ExtraParams {
+		parts := strings.SplitN(param, "=", 2)
+		if len(parts) == 2 {
+			r.Form.Set(parts[0], parts[1])
+		}
+	}
+
 	if cconfig.PKCE {
 		codeVerifier = RandomString(CodeVerifierLength)
 

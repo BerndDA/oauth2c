@@ -82,6 +82,7 @@ type ClientConfig struct {
 	IDTokenHint            string
 	LoginHint              string
 	IDPHint                string
+	ExtraParams            []string
 	TLSCert                string `validate:"omitempty,uri|file"`
 	TLSKey                 string `validate:"omitempty,uri|file"`
 	TLSRootCA              string `validate:"omitempty,uri|file"`

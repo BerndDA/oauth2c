@@ -72,6 +72,7 @@ func NewOAuth2Cmd(version, commit, date string) (cmd *OAuth2Cmd) {
 	cmd.PersistentFlags().StringVar(&cconfig.IDTokenHint, "id-token-hint", "", "id token hint")
 	cmd.PersistentFlags().StringVar(&cconfig.LoginHint, "login-hint", "", "user identifier hint")
 	cmd.PersistentFlags().StringVar(&cconfig.IDPHint, "idp-hint", "", "identity provider hint")
+	cmd.PersistentFlags().StringSliceVar(&cconfig.ExtraParams, "extra-param", []string{}, "additional parameters in key=value format")
 	cmd.PersistentFlags().StringVar(&cconfig.TLSCert, "tls-cert", "", "path to tls cert pem file")
 	cmd.PersistentFlags().StringVar(&cconfig.TLSKey, "tls-key", "", "path to tls key pem file")
 	cmd.PersistentFlags().StringVar(&cconfig.TLSRootCA, "tls-root-ca", "", "path to tls root ca pem file")
