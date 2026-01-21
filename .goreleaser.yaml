@@ -12,15 +12,18 @@ builds:
       - darwin
     goarch:
       - amd64
-      - arm
       - arm64
+    ignore:
+      - goos: darwin
+        goarch: amd64
+      - goos: windows
+        goarch: arm64
 archives:
-  - name_template: >-
-      {{ .ProjectName }}_
-      {{- .Version }}_
-      {{- title .Os }}_
+  - format: binary
+    name_template: >-
+      {{ .ProjectName }}-
+      {{- .Os }}-
       {{- if eq .Arch "amd64" }}x86_64
-      {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
 checksum:
   name_template: 'checksums.txt'
